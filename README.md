@@ -9,5 +9,6 @@ Was ist euer Zeitplan?
 * Rechtzeitig fertig werden!
 
 Wie teilt ihr euch auf? / Wer macht was?
-* Entwicklung: Philipp Bassek, Bastian Vogt, Tobias Bächle
+* Entwicklung API: Philipp Bassek
+* Entwicklung Backend: Bastian Vogt, Tobias Bächle
 * Arc42 + Dokumentation: Thomas Keuthen, Silvana May
