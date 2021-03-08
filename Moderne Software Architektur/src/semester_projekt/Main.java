@@ -57,20 +57,18 @@ public class Main {
 			return "Leeres JSON-Objekt von Web-API erhalten.";
 		}
 		
-		// Für den Ergebnis-String wird ein StringBuffer-Objekt verwendet,
-		// weil hiermit String-Konkatenationen effizienter sind.
+		
 		StringBuffer sbuf = new StringBuffer();		
 		
 		
 		
-		//JSONArray arrayResults = jsonObject.getJSONArray( "results" );
 		JSONArray arrayResults = new JSONArray( jsonString );
 		int anzPersonen = arrayResults.length();
-		//Log.i(TAG4LOGGING, "Anzahl Einträge: " + anzPersonen);
+	
 		sbuf.append("Anzahl Datensätze von Web-API erhalten: ").append(anzPersonen).append("\n\n");
 		
 		
-		// Einzelne Personen-Unterobjekte aus JSON-Objekt holen
+		
 		for (int i = 0; i < anzPersonen; i++) {
 			
 			//JSONObject resultObject = (JSONObject)arrayResults.get(i);
@@ -81,7 +79,7 @@ public class Main {
 			}
 			String timeString1 = resultObject.getString( "timestamp");
 			String rateString1 = resultObject.getString( "rate");
-			//String userString = parseUserObjekt( resultObject );
+			
 			String userString = timeString1 + "\n" + rateString1;
 			sbuf.append( userString ).append("\n\n");
 		}
