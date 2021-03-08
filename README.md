@@ -11,3 +11,4 @@ Was ist euer Zeitplan?
 Wie teilt ihr euch auf? / Wer macht was?
 * Entwicklung: Philipp Bassek, Bastian Vogt, Tobias Bächle
 * Arc42: Thomas Keuthen, Silvana May
+Test
