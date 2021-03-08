@@ -22,7 +22,7 @@ public class Main {
         String            httpErgebnisDokument = "";
 
 
-        url  = new URL("https://api.nomics.com/v1/exchange-rates/history?key=e3e588cbebf51f003e50b60b1345b88d&currency=BTC&start=2021-03-01T00%3A00%3A00Z&end=2021-03-05T00%3A00%3A00Z");
+        url  = new URL("https://www.tronalddump.io/random/quote");
         conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET"); // Eigentlich nicht nötig, weil "GET" Default-Wert ist.
 
