@@ -5,26 +5,24 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import org.json.JSONArray;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
-
-
 public class Main {
+	
 
-	protected String holeDatenVonWebAPI() throws Exception {
+	protected static String getAPIData() throws Exception {
 
-        URL url                                = null;
-        HttpURLConnection conn                 = null;
-        String            httpErgebnisDokument = "";
-
+        URL url = null;
+        HttpURLConnection conn = null;
+        String httpErgebnis = "";
 
         url  = new URL("https://www.tronalddump.io/random/quote");
         conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET"); // Eigentlich nicht nötig, weil "GET" Default-Wert ist.
+        conn.setRequestMethod("GET"); 
 
         if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
 
@@ -33,58 +31,53 @@ public class Main {
 
         } else {
 
-            InputStream is        = conn.getInputStream();
-            InputStreamReader ris = new InputStreamReader(is);
-            BufferedReader reader = new BufferedReader(ris);
+            InputStream is = conn.getInputStream();
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader reader = new BufferedReader(isr);
 
-            // JSON-Dokument zeilenweise einlesen
             String zeile = "";
             while ( (zeile = reader.readLine()) != null) {
 
-                httpErgebnisDokument += zeile;
+                httpErgebnis += zeile;
             }
         }
 
-   //     Log.i(TAG4LOGGING, "JSON-String erhalten: " + httpErgebnisDokument);
-
-        return httpErgebnisDokument;
+        return httpErgebnis;
 	}
 	
-	protected String parseJSON(String jsonString) throws JSONException {
+	protected static String parseJSON(String jsonString) throws JSONException, Exception {
 		
 		if (jsonString == null || jsonString.trim().length() == 0) {
 
 			return "Leeres JSON-Objekt von Web-API erhalten.";
 		}
 		
-		
 		StringBuffer sbuf = new StringBuffer();		
 		
+		JSONObject jsonObject = new JSONObject( jsonString);
 		
-		
-		JSONArray arrayResults = new JSONArray( jsonString );
-		int anzPersonen = arrayResults.length();
+		String appearedString = jsonObject.getString("appeared_at");
+		String quoteString = jsonObject.getString("value");
 	
-		sbuf.append("Anzahl Datensätze von Web-API erhalten: ").append(anzPersonen).append("\n\n");
+		Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(appearedString);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+		String date3 = sdf.format(date2);
 		
+		sbuf.append("'").append(quoteString).append("' - Donald Trump, ").append(date3);
 		
-		
-		for (int i = 0; i < anzPersonen; i++) {
-			
-			//JSONObject resultObject = (JSONObject)arrayResults.get(i);
-			JSONObject resultObject = arrayResults.getJSONObject(i);
-			if (resultObject == null) {
-
-				return "Fehler beim JSON-Parser: User-Objekt mit Index " + i + " war null.";
-			}
-			String timeString1 = resultObject.getString( "timestamp");
-			String rateString1 = resultObject.getString( "rate");
-			
-			String userString = timeString1 + "\n" + rateString1;
-			sbuf.append( userString ).append("\n\n");
-		}
-
 		return sbuf.toString();
+		
 	}
 	
+	public static void main(String[] args) throws JSONException, Exception {
+		String jsonDocument = "";
+		try {
+			jsonDocument = getAPIData();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String ergString = parseJSON (jsonDocument);
+		System.out.println(ergString);
+	}
 }
