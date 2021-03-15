@@ -18,6 +18,11 @@ import java.util.List;
 @RequestMapping(path= "tronalddump/quote")
 public class QuoteController {
 
+    private final QuoteService quoteService;
+
+    public QuoteController(QuoteService quoteService){
+        this.quoteService = quoteService;
+    }
 
     @GetMapping()
     public List<QuoteResponse> getDonaldsShit(@RequestParam("tag") String tag) {
