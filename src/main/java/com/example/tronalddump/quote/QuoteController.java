@@ -28,26 +28,41 @@ public class QuoteController {
     public List<QuoteResponse> getDonaldsShit(@RequestParam("tag") String tag) {
         QuoteDBClient client = new QuoteDBClient();
 
-        QuoteObj data = client.getData(tag);
-
-        List<QuoteResponse> quoteResponse = new ArrayList<>();
-
-        for(Quote q: data._embedded.quotes){
-            QuoteResponse qr = new QuoteResponse();
-
-            qr.setQuote(q.value);
 
 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-            qr.setDate(sdf.format(q.appeared_at));
+            QuoteObj data = client.getData(tag);
 
-            Double schadensersatz = 0.;
-            qr.setSchadensersatz(schadensersatz);
+            List<QuoteResponse> quoteResponse = new ArrayList<>();
 
-            quoteResponse.add(qr);
-        }
+            if(data._embedded == null){
+                QuoteResponse qr = new QuoteResponse();
+                qr.setErrorMessage("Keine Treffer!");
+                quoteResponse.add(qr);
+                return quoteResponse;
 
-        return quoteResponse;
+            }
+
+            for (Quote q : data._embedded.quotes) {
+                QuoteResponse qr = new QuoteResponse();
+
+                qr.setQuote(q.value);
+
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+                qr.setDate(sdf.format(q.appeared_at));
+
+                Double schadensersatz = quoteService.berechneSchadensersatz();
+                qr.setSchadensersatz(schadensersatz);
+
+                quoteResponse.add(qr);
+            }
+
+
+
+
+            return quoteResponse;
+
+
 
     }
 }

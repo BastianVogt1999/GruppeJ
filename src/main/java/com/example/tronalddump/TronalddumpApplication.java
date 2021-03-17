@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class TronalddumpApplication {
 
 	public static void main(String[] args) {
+
+
 		SpringApplication.run(TronalddumpApplication.class, args);
 	}
 
 	@GetMapping()
 	public String hello() {
-		return "Hello Donald";
+		return "Hier gibt's tolle Donald Trump Zitate.";
 	}
 }

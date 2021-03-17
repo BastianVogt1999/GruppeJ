@@ -5,4 +5,5 @@ public class QuoteObj {
     public int total;
     public Embedded _embedded;
     public Links _links;
+
 }

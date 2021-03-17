@@ -9,5 +9,6 @@ public class QuoteResponse {
     private String quote;
     private String date;
     private double schadensersatz;
+    private String ErrorMessage;
 
 }
