@@ -50,7 +50,7 @@ public class QuoteController {
                 SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
                 qr.setDate(sdf.format(q.appeared_at));
 
-                Double schadensersatz = quoteService.berechneSchadensersatz();
+                Double schadensersatz = quoteService.berechneSchadensersatz(q.value);
                 qr.setSchadensersatz(schadensersatz);
 
                 quoteResponse.add(qr);
