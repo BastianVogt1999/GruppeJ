@@ -3,10 +3,15 @@ package com.example.tronalddump.quote;
 
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Service
 public class QuoteService {
 	
-	public double berechneSchadensersatz(String quote, String created_at) throws Exception{
+	public String berechneSchadensersatz(String quote, String created_at) {
 		
 		int wordCount = 0;
 	    boolean word = false;
@@ -21,16 +26,27 @@ public class QuoteService {
 	            wordCount++;
 	        }
 	    }
-		double schadensersatz = 0.0;
-		int staticVar = 1000;
-		Date quoteDate = new SimpleDateFormat("yyyy-MM-dd").parse(created_at);
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+		double schaden = 0.0;
+		//int staticVar = 1000;
+        Date quoteDate = null;
+        try {
+            quoteDate = new SimpleDateFormat("dd.MM.yyyy").parse(created_at);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
 		Date nowDate = new Date();
 		int quoteYear = Integer.valueOf(sdf.format(quoteDate));
 		int nowYear = Integer.valueOf(sdf.format(nowDate));
 		int differenz = (nowYear - quoteYear) +1;
-		
-		schadensersatz = wordCount * differenz * staticVar;
+        double random = Math.random() * 5;
+		schaden = wordCount * differenz + random
+                //* staticVar
+        ;
+
+
+        DecimalFormat df = new DecimalFormat("#0.00");
+        String schadensersatz = df.format(schaden);
 		
 		return schadensersatz;
     }
