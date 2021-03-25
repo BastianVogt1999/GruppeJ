@@ -3,7 +3,7 @@
 Dies ist ein Testprojekt einer Implementierung der [API TronaldDump](https://docs.tronalddump.io/)
 
 * [Hintergrund](#background)
-* [Was ist die Applikation](#general-info)
+* [Was ist die Applikation?](#general-info)
 * [Vewendete Technologien und Aufbau](#technologies)
 * [Tutorial](#tutorial)
 
