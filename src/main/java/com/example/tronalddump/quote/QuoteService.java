@@ -27,7 +27,7 @@ public class QuoteService {
 	        }
 	    }
 		double schaden = 0.0;
-		//int staticVar = 1000;
+		int staticVar = 1000;
         Date quoteDate = null;
         try {
             quoteDate = new SimpleDateFormat("dd.MM.yyyy").parse(created_at);
@@ -40,9 +40,7 @@ public class QuoteService {
 		int nowYear = Integer.valueOf(sdf.format(nowDate));
 		int differenz = (nowYear - quoteYear) +1;
         double random = Math.random() * 5;
-		schaden = wordCount * differenz + random
-                //* staticVar
-        ;
+		schaden = ((wordCount * differenz) /100 + random) * staticVar;
 
 
         DecimalFormat df = new DecimalFormat("#0.00");

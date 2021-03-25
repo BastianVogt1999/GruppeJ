@@ -1,11 +1,8 @@
 package com.example.tronalddump.quote;
 
 import com.example.tronalddump.quoteDB.QuoteDBClient;
-import com.example.tronalddump.quoteDB.QuoteDBResponse;
-import com.example.tronalddump.quoteDB.quoteObject.Embedded;
 import com.example.tronalddump.quoteDB.quoteObject.Quote;
 import com.example.tronalddump.quoteDB.quoteObject.QuoteObj;
-import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
