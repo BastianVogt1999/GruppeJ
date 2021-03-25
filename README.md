@@ -1,3 +1,4 @@
+
 # Tronald Dump Zitate
 Dies ist ein Testprojekt einer Implementierung der [API TronaldDump](https://docs.tronalddump.io/)
 
@@ -5,6 +6,8 @@ Dies ist ein Testprojekt einer Implementierung der [API TronaldDump](https://doc
 * [Was ist die Applikation](#general-info)
 * [Vewendete Technologien und Aufbau](#technologies)
 * [Tutorial](#tutorial)
+
+![tronalddump_850x850](https://user-images.githubusercontent.com/71218703/112539649-88df5e80-8db1-11eb-9d9f-35343ee02dd7.png)
 
 ### Hintergrund
 Neben dem politischen Geschäft machte der ehemalige US-Präsident [Donald Trump](https://de.wikipedia.org/wiki/Donald_Trump) besonders aufgrund oftmals fragwürdiger Beiträge auf dem sozialen Netzwerk "Twitter" auf sich aufmerksam, bei denen Trump oftmals sehr fragwürdige Aussagen tätigte.
@@ -27,3 +30,4 @@ Die App basiert auf einem Spring-Framework. Innerhalb davon wird über JAVA-Klas
 * *Tobias Bächle*
 * *Thomas Keuthen*
 * *Silvana May*
+
