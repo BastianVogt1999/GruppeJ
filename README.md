@@ -1,17 +1,25 @@
-#Tronald Dump Zitate
+# Tronald Dump Zitate
+Dies ist ein Testprojekt einer Implementierung der [API TronaldDump](https://docs.tronalddump.io/)
+* [Was ist die Applikation](#general-info)
+* [Vewendete Technologien](#technologies)
+* [Tutorial](#tutorial)
 
 
 
+### Was ist die Applikation?
 
-##Vorstellung Grobstruktur
+### Verwendete Technolgien
 * Java Zugriff auf API
 * Objekt anlegen aus API Response
 * Methoden/Module zur Schadenskalkulation
 
-Was ist euer Zeitplan?
-* Rechtzeitig fertig werden!
+### Tutorial
 
-Wie teilt ihr euch auf? / Wer macht was?
-* Entwicklung API: Philipp Bassek
-* Entwicklung Backend: Bastian Vogt, Tobias Bächle
-* Arc42 + Dokumentation: Thomas Keuthen, Silvana May
+
+
+#### Teilnehmer
+* Philipp Bassek
+* Bastian Vogt
+* Tobias Bächle
+* Thomas Keuthen
+* Silvana May
