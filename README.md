@@ -3,7 +3,7 @@ Dies ist ein Testprojekt einer Implementierung der [API TronaldDump](https://doc
 
 * [Hintergrund](#background)
 * [Was ist die Applikation](#general-info)
-* [Vewendete Technologien](#technologies)
+* [Vewendete Technologien und Aufbau](#technologies)
 * [Tutorial](#tutorial)
 
 ### Hintergrund
@@ -11,12 +11,11 @@ Neben dem politischen Geschäft machte der ehemalige US-Präsident [Donald Trump
 Die API "TronaldDump" macht sich auf sich auf ironische Art über die Zitate lustig und ermöglicht uns als Entwicklern die Möglichkeit die App *ValueOfQuote* zu präsentieren.
 
 ### Was ist die Applikation?
+Durch *ValueOfQuote* kann der Nutzer ein beliebiges Zitat  von Trump auswählen, welches einer der angesprochenen Person entgegengesetzt werden kann um einen theoretische Schadensersatzforderung zu berechnen, die gefordert werden kann. Dabei sind alle möglichen Werte nur geschätzt und entsprechen nicht der Wirklichkeit.
+Vielleicht kann sich ja Trump (oder auch ihr als Nutzer) zukünftig vor absetzen eines Tweets ja ausrechnen, was das Kosten könnte. ;-)
 
-
-### Verwendete Technolgien
-* Java Zugriff auf API
-* Objekt anlegen aus API Response
-* Methoden/Module zur Schadenskalkulation
+### Verwendete Technolgien und Aufbau
+Die App basiert auf einem Spring-Framework. Innerhalb davon wird über JAVA-Klassen auf die API zugegriffen und Objekte angelegt werden, aus denen in Methoden der Schadensersatz berechnet wird.
 
 ### Tutorial
 
