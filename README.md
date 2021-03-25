@@ -1,6 +1,9 @@
-# GruppeJ
+#Tronald Dump Zitate
 
-Vorstellung Grobstruktur
+
+
+
+##Vorstellung Grobstruktur
 * Java Zugriff auf API
 * Objekt anlegen aus API Response
 * Methoden/Module zur Schadenskalkulation
