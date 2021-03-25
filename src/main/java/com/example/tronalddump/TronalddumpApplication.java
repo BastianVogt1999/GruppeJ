@@ -13,6 +13,7 @@ public class TronalddumpApplication {
 
 
 		SpringApplication.run(TronalddumpApplication.class, args);
+
 	}
 
 	@GetMapping()
